@@ -1,0 +1,79 @@
+.navbar {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   transition: 0.6s;
+   padding: 0 10px;
+   z-index: 1000000;
+  padding: 14px 0px;
+  box-sizing: border-box;
+  transition: transform 0.4s ease-in-out;
+  // background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.0)); /* Gradient background */
+  // backdrop-filter: blur(3px); /* Blur effect */
+  // border-radius: 20px;
+
+  .black-box-container{
+    background-color: rgba(29, 29, 29, 0.473);
+    border-radius: 30px;
+    padding: 8px;
+  }
+
+  .user-icon{
+    color: white;
+    font-size: 30px;
+    cursor:pointer;
+  }
+  
+
+  .user-email-text{
+    color:white;
+  }
+
+  .logo-container{
+    background-color: rgba(0, 0, 0, 0.533);
+    margin-left: 2rem;
+    border-radius: 10px;
+    padding: 2px 10px;
+    
+    
+    .main-logo{
+     position: relative;
+    }
+
+  }
+
+
+   .nav-links{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    padding-right: 2rem;
+
+    div{
+      position: relative;
+      list-style: none;
+
+      .link{
+        position: relative;
+        margin: 0 15px;
+        text-decoration: none;
+        color: white;
+        letter-spacing: 1px;
+        font-weight: 600px;
+        transition: 0.6s;
+      }
+
+    }
+
+   }
+}
+
+.hiding-nav {
+  transform: translateY(-100%);
+}

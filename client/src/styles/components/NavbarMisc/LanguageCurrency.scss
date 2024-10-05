@@ -1,0 +1,113 @@
+.payment-method-dropdown {
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: rgba(29, 29, 29, 0.473);
+    border-radius: 30px;
+    // background-color: teal;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .payment-method-object{
+    display: flex;
+    align-items: center;
+    margin: 8px;
+  }
+  
+  .dropdown-content-c {
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    // height: 130px;
+    width: 200px;
+    background-color: white;
+    border-radius: 4px;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    gap: 4px;
+    margin-top: 0.4rem;
+    padding-top: 0.2rem;
+    flex-direction: column;
+    padding: 10px;
+    .dropdown-separator-c{
+      margin-bottom: 10px;
+
+
+      .dropdown-language-c{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+
+        img{
+          width: 20px;
+        }
+      }
+    }
+
+    .payment-methods {
+      margin-top: 0.3rem;
+    }
+  
+    .currency-method {
+      background-color: rgb(255, 255, 255);
+      display: flex;
+      align-items: center;
+      padding: 9px;
+      gap: 5px;
+  
+      &:hover {
+        background-color: #a8a8a86c; // Example background color change on hover
+        // Add any additional styles for the hover effect
+      }
+    }
+
+    .selected-currency {
+        background-color: rgba(99, 200, 255, 0.748);
+        color: white;  // Adjust text color for better visibility
+      }
+
+    h2 {
+      font-size: 18px;
+      font-weight: bold;
+      color: black;
+    }
+  
+    h3 {
+      font-size: 16px;
+      color: black;
+    }
+  
+    .material-symbols-outlined {
+      color: rgb(0, 149, 255);
+    }
+  } /* Add this to your CSS file */
+  .payment-method {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+  }
+  
+  .info-card-overlay {
+    position: absolute;
+    left: 85%;
+    color: black;
+    top: 0%;
+    width: 150%;
+    z-index: 1;
+    display: flex;
+  }
+  
+  .info-card {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+  }
+  
+  .payment-method:hover .info-card {
+    display: block;
+  }
+  

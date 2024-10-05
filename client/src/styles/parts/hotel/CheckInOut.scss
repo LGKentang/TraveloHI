@@ -1,0 +1,71 @@
+.booking{
+    display: flex;
+    min-width: 500px;
+    gap: 12px;
+    flex-direction: column;
+    padding: 30px;
+    justify-content: space-around
+    ;
+
+    h2{
+        font-size:20px;
+        font-weight: 600;
+    }
+    .booking-details-separator{
+        display: flex;
+        gap: 50%;
+        .booking-details{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+    
+            h3{
+                font-size: 24px;
+            }
+    
+        }
+    }
+
+    .booking-details-pay{
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        align-items: center;
+      margin-top: 10px;
+        h3{
+            font-size: 20px;
+
+        }
+        .price-tag{
+            font-weight: bold;
+        }
+    }
+    h4{
+        color: gray;
+    }
+    
+    .booking-details-pay-x{
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+        justify-content: end;
+    }
+}
+
+
+.booking input[type="date"] {
+    width: 190px;
+    height: 70px;
+    font-size: 24px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0 10px;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box; 
+    outline: none; 
+    transition: border-color 0.3s ease-in-out; 
+
+    &:focus {
+        border-color: #0084ff; 
+    }
+}

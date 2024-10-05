@@ -1,0 +1,58 @@
+// TABLE
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.table-fluid {
+    max-width: 100%;
+    width: 100%;
+    overflow-x: auto;
+
+    tr,
+    td,
+    table {
+        white-space: nowrap;
+    }
+}
+
+table.table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    display: table;
+
+    td,
+    th,
+    td,
+    th {
+        padding: 10px 15px;
+        display: table-cell;
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    thead {
+        background-color: $light;
+
+        th {
+            padding: 15px !important;
+            font-weight: bold;
+        }
+    }
+
+    th {
+        font-weight: 500;
+    }
+
+    tr {
+        border-bottom: 1px solid darken($light, 10%);
+
+    }
+
+}
+
+
+
+.table-striped {
+    tr:nth-child(even) {
+        background-color: $light;
+    }
+}

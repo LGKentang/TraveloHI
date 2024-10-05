@@ -1,0 +1,180 @@
+.hotel-page{
+  margin-top: 100px;
+  margin-bottom: 100px;
+  // max-width: 50%;
+
+  .hotel-details-card{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+
+
+    .detail-card-b{
+      display: flex;
+      min-width: 66%;
+      min-height: 130px;
+      padding: .7rem;
+      flex-direction: column;
+
+      align-items: flex-start;
+      .detail-card-header{
+        display:flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+
+        .centerize-header{
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .detail-card-body{
+        width: 100%;
+        height: 100%;
+        // background-color: green;
+        max-width: 400px;
+      
+      }
+
+      h2{
+        font-weight: bold;
+        font-size: 1rem;
+      }
+
+
+    }
+  
+    .detail-card{
+      display: flex;
+      min-width: 33%;
+      min-height: 130px;
+      padding: .7rem;
+      flex-direction: column;
+      // background-color: red;
+      align-items: flex-start;
+      .detail-card-header{
+        display:flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+
+        .centerize-header{
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .detail-card-body{
+        max-width: 400px;
+      
+      }
+
+      h2{
+        font-weight: bold;
+        font-size: 1rem;
+      }
+
+
+    }
+  }
+  
+
+}
+
+.hotel-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .desc {
+    display: flex;
+    flex-direction: row;
+    gap:1rem;
+
+    .left-desc {
+    }
+
+    .right-desc {
+        // background-color: red;
+        // height: 100%;
+        width: 50%;
+        display: flex;
+        justify-content: end;
+
+        div{
+            gap: 3px;
+            h2{
+                font-size: 24px;
+                color:rgb(255, 106, 0);
+                text-align: end;
+            }
+            display: flex;
+            flex-direction: column;
+
+        }
+    }
+  }
+
+  .hotel-photos {
+    display: flex;
+    justify-content: space-between;
+    gap:1rem;
+    img{
+        border-radius: 8px;
+    }
+
+    .left-photos {
+      position: relative;
+      img{
+        width: 600px;
+      }
+
+      .overlay-review {
+        position: absolute;
+        bottom: 3px;
+        left: 0;
+        background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay, adjust as needed */
+        color: white; /* Text color for the overlay */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 180px;
+        height: 80px;
+        border-top-right-radius: 20px;
+        backdrop-filter: blur(4px);
+
+        .blue-circle{
+          width: 60px;
+          height: 60px;
+          background-color: rgba(20, 122, 255, 0.792);
+          border-radius: 300px;
+          align-items: center;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+    .right-photos {
+      display: grid;
+      grid-template-columns: repeat(2, 200px);
+      grid-template-rows: repeat(3, 100px);
+      grid-gap: 10px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+
+
+  
+}
+

@@ -1,0 +1,97 @@
+// GRID
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+/*
+* * .row
+*/
+
+.#{$grid_name} {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+// AUTO GRID
+/*
+* * .column
+*/
+.#{$grid_name} .#{$grid_auto} {
+    max-width: 100%;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+/*
+* * .row.no-gutters
+*/
+.#{$grid_name} {
+    margin-left: -$grid_gutter;
+    margin-right: -$grid_gutter;
+    &.no-gutters {
+        &>div {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    }
+}
+
+
+/*
+* * .row > .col-*
+*/
+.#{$grid_name}>[class*="#{$grid_col_name}"] {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-left: $grid_gutter;
+    padding-right: $grid_gutter;
+
+}
+
+// OFFSET
+@for $i from 1 through $grid_col {
+
+    .offset-#{$i} {
+        margin-left: percentage($i / $grid_col);
+    }
+}
+
+
+// AUTO COL
+@for $i from 1 through $grid_col {
+    .#{$grid_col_name}-#{$i} {
+        flex-basis: percentage($i / $grid_col);
+        max-width: percentage($i / $grid_col);
+    }
+
+}
+
+// ORDER
+@for $i from 1 through 10 {
+    @include order($i, '');
+}
+
+
+// GRID LOOP
+@each $size,
+$breakpoint in $grid-array {
+    @media (min-width: $breakpoint) {
+
+        @for $i from 1 through $grid_col {
+            .#{$grid_col_name+$size}-#{$i} {
+                flex-basis: percentage($i / $grid_col);
+                max-width: percentage($i / $grid_col);
+            }
+        }
+
+        // DISPLAY PROPERTIES
+        @include display($size);
+
+        // Z - ORDER
+        @for $i from 1 through 10 {
+            @include order($i, $size);
+        }
+
+    }
+
+}

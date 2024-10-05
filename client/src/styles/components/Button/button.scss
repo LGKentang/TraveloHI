@@ -1,0 +1,68 @@
+.btn {
+  font-family: 'Nunito';
+  padding: 10px 20px;
+  font-weight: 700;
+  // font-family: Segoe UI Symbol;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color .1s, color .1s; 
+
+  &.primary {
+    background-color: #007bff;
+    color: #fff;
+
+    &:hover {
+      background-color: #0056b3; /* Darken color on hover */
+    }
+  }
+
+  &.secondary {
+    background-color: #bcbcbc;
+    color: #373737;
+
+    &:hover {
+      background-color: #a5a5a5; 
+    }
+  }
+
+  &.ternary {
+    background-color: black;
+    color: rgb(255, 255, 255);
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.347);
+    }
+  }
+
+  &.fourth{
+    background-color: #f87d25;
+    color: white;
+    &:hover {
+      background-color: rgba(235, 125, 47, 0.868);
+    }
+  }
+
+  &.fifth{
+    background-color: #f87d25;
+    color: white;
+    &:hover {
+      background-color: rgba(235, 125, 47, 0.868);
+    }
+  }
+  &.sixth{
+    background-color: rgb(33, 209, 33);
+    color: white;
+    &:hover{
+      background-color: rgb(55, 153, 55);
+    }
+  }
+
+  &.seventh{
+    background-color: rgb(248, 47, 20);
+    color: white;
+    &:hover{
+      background-color: rgb(205, 64, 45);
+    }
+  }
+}

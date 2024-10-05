@@ -1,0 +1,13 @@
+
+
+.game-canvas {
+    width:80%;
+    object-fit: contain;
+    background-color: black;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+
+.game-object {
+    display: none;
+}

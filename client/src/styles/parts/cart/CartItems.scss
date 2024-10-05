@@ -1,0 +1,459 @@
+.cart-item {
+  // padding-top: 600px;
+  display: flex;
+  flex-direction: column;
+  // width: 10vw;
+  min-height: 200px;
+  margin-bottom: 200px;
+  // padding: 20px 30px;
+  gap: 20px;
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .flight-reservation-detail-c {
+    display: flex;
+    // align-items: flex-end;
+    width: inherit;
+    img {
+      max-width: 100px;
+    }
+
+    h2 {
+      font-weight: bold;
+    }
+
+    .material-symbols-outlined {
+      cursor: pointer;
+    }
+
+    .flight-reservation-detail-upper-card {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      width: 100%;
+
+      .select-class {
+        appearance: none; /* Remove default appearance */
+        -webkit-appearance: none; /* For Safari */
+        -moz-appearance: none; /* For Firefox */
+        background-color: #f8f8f8; /* Background color */
+        border: 1px solid #ccc; /* Border */
+        padding: 10px 15px; /* Padding */
+        font-size: 16px; /* Font size */
+        border-radius: 5px; /* Border radius */
+        cursor: pointer; /* Cursor style */
+        outline: none; /* Remove outline */
+      }
+
+      /* Style the options */
+      .select-class option {
+        background-color: #fff; /* Background color */
+        color: #333; /* Text color */
+      }
+
+      /* Style the select when it's focused */
+      .select-class:focus {
+        border-color: #007bff; /* Border color */
+      }
+
+      .f-data-component {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        bottom: 10px;
+
+        strong {
+          font-weight: bold;
+        }
+
+        p {
+          font-size: 12px;
+        }
+      }
+      .f-data-component-m {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        top: 0px;
+
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .accordion {
+    // margin: 60px auto;
+    width: 99%;
+
+    .content {
+      .flight-journey-detail {
+        width: 100%;
+        height: 100%;
+        padding: 3%;
+
+        p {
+          font-size: 13px;
+          color: rgb(90, 90, 90);
+        }
+
+        .place-journey {
+          display: grid;
+          grid-template-columns: 12% 7% 75%;
+
+          .origin-journey {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 3px;
+          }
+
+          .rest-journey {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 3px;
+            padding: 12px 0;
+          }
+
+          .rest-journey-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 3px;
+            padding: 12px 0;
+          }
+
+          .starting-line {
+            display: flex;
+            justify-content: center;
+            position: relative;
+
+            .starting-line-circle {
+              position: absolute;
+              width: 10px; /* Adjust the width of the circle */
+              height: 10px; /* Adjust the height of the circle */
+              border-radius: 50%; /* Make it a circle */
+              border: 2px rgb(42, 156, 255) solid;
+              background-color: white;
+              z-index: 10;
+            }
+            .starting-line-circle-done {
+              position: absolute;
+              width: 10px; /* Adjust the width of the circle */
+              height: 10px; /* Adjust the height of the circle */
+              border-radius: 50%; /* Make it a circle */
+              border: 2px rgb(42, 156, 255) solid;
+              background-color: rgb(42, 156, 255);
+              z-index: 10;
+            }
+
+            .journey-line {
+              position: absolute;
+              height: 100%;
+
+              border: 1px rgb(177, 177, 177) solid;
+            }
+
+            .journey-line-d {
+              position: absolute;
+              height: 100%;
+              border-style: dashed;
+              border-width: 2px; /* Adjust the thickness of the dotted line */
+              border-color: rgb(
+                177,
+                177,
+                177
+              ); /* Set the color of the dotted line */
+            }
+          }
+
+          .origin-journey-details {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            // justify-content: space-between;
+          }
+        }
+
+        .detail-journey {
+          display: grid;
+          grid-template-columns: 12% 7% 75%;
+
+          .duration-journey {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            padding: 14px 0;
+          }
+
+          .starting-line {
+            display: flex;
+            justify-content: center;
+            position: relative;
+
+            .journey-line {
+              position: absolute;
+              height: 100%;
+
+              border: 1px rgb(177, 177, 177) solid;
+            }
+          }
+
+          .detail-data-journey {
+            padding: 20px 0px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            .logo-and-airline-name {
+              display: flex;
+              gap: 5px;
+              align-items: center;
+              img {
+                width: 50px;
+              }
+            }
+            .baggage-details {
+              .material-symbols-outlined {
+                font-size: 16px;
+                color: rgb(121, 121, 121);
+              }
+            }
+            .seat-detail {
+              align-items: center;
+              display: flex;
+              gap: 5px;
+
+              .button {
+                padding: 2px 5px;
+                p {
+                  font-size: 10px;
+                }
+
+                /* Styling for the button */
+                background-color: #d3d3d3; /* Blue background color */
+                color: #fff; /* White text color */
+                border: none; /* No border */
+                border-radius: 5px; /* Rounded corners */
+                cursor: pointer; /* Cursor style */
+                transition: background-color 0.3s ease; /* Smooth transition on hover */
+
+                /* Hover effect */
+                &:hover {
+                  background-color: #a8a8a8; /* Darker blue on hover */
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  p {
+    font-size: 13px;
+    color: rgb(90, 90, 90);
+  }
+
+  .place-journey {
+    display: grid;
+    grid-template-columns: 12% 7% 75%;
+
+    .origin-journey {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 3px;
+    }
+
+    .rest-journey {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 3px;
+      padding: 12px 0;
+    }
+
+    .rest-journey-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 3px;
+      padding: 12px 0;
+    }
+
+    .starting-line {
+      display: flex;
+      justify-content: center;
+      position: relative;
+
+      .starting-line-circle {
+        position: absolute;
+        width: 10px; /* Adjust the width of the circle */
+        height: 10px; /* Adjust the height of the circle */
+        border-radius: 50%; /* Make it a circle */
+        border: 2px rgb(42, 156, 255) solid;
+        background-color: white;
+        z-index: 10;
+      }
+      .starting-line-circle-done {
+        position: absolute;
+        width: 10px; /* Adjust the width of the circle */
+        height: 10px; /* Adjust the height of the circle */
+        border-radius: 50%; /* Make it a circle */
+        border: 2px rgb(42, 156, 255) solid;
+        background-color: rgb(42, 156, 255);
+        z-index: 10;
+      }
+
+      .journey-line {
+        position: absolute;
+        height: 100%;
+
+        border: 1px rgb(177, 177, 177) solid;
+      }
+
+      .journey-line-d {
+        position: absolute;
+        height: 100%;
+        border-style: dashed;
+        border-width: 2px; /* Adjust the thickness of the dotted line */
+        border-color: rgb(177, 177, 177); /* Set the color of the dotted line */
+      }
+    }
+
+    .origin-journey-details {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      // justify-content: space-between;
+    }
+  }
+
+  .detail-journey {
+    display: grid;
+    grid-template-columns: 12% 7% 75%;
+
+    .duration-journey {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      padding: 14px 0;
+    }
+
+    .starting-line {
+      display: flex;
+      justify-content: center;
+      position: relative;
+
+      .journey-line {
+        position: absolute;
+        height: 100%;
+
+        border: 1px rgb(177, 177, 177) solid;
+      }
+    }
+
+    .detail-data-journey {
+      padding: 20px 0px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      .logo-and-airline-name {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        img {
+          width: 50px;
+        }
+      }
+      .baggage-details {
+        .material-symbols-outlined {
+          font-size: 16px;
+          color: rgb(121, 121, 121);
+        }
+      }
+      .seat-detail {
+        align-items: center;
+        display: flex;
+        gap: 5px;
+
+        .button {
+          padding: 2px 5px;
+          p {
+            font-size: 10px;
+          }
+
+          /* Styling for the button */
+          background-color: #d3d3d3; /* Blue background color */
+          color: #fff; /* White text color */
+          border: none; /* No border */
+          border-radius: 5px; /* Rounded corners */
+          cursor: pointer; /* Cursor style */
+          transition: background-color 0.3s ease; /* Smooth transition on hover */
+
+          /* Hover effect */
+          &:hover {
+            background-color: #a8a8a8; /* Darker blue on hover */
+          }
+        }
+      }
+    }
+  }
+
+  .accordion li {
+    list-style: none;
+    width: 100%;
+    margin: 20px 0;
+    // padding: 10px;
+    // border-radius: 8px;
+    // background: rgb(255, 255, 255);
+    // box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    //   -6px -6px 10px -1px rgba(255, 255, 255, 0.15);
+  }
+
+  .accordion li label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  label::before {
+    // margin-right: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    transition: transform 1s ease;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  .accordion .content {
+    color: #000000;
+    padding: 0 10px;
+    line-height: 26px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, padding 0.5s;
+  }
+
+  .accordion input[type="radio"]:checked + label {
+    transform: rotate(90deg);
+  }
+
+  .accordion input[type="radio"]:checked + label + .content {
+    max-height: 1300px;
+    padding: 10px 10px 20px;
+  }
+}

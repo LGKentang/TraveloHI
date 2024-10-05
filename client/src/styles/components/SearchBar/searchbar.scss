@@ -1,0 +1,201 @@
+/* styles/components/SearchBar/searchbar.scss */
+
+.search {
+  position: relative;
+
+  .search-container {
+    display: flex;
+    align-items: center;
+
+    .main-btn {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50%; /* Adjusted width */
+      height: 100%;
+      background: #f58e07;
+      border-radius: 100px; /* Adjusted border-radius */
+      transition: 0.5s;
+    }
+
+    .button-box {
+      position: relative;
+      border-radius: 100px; /* Adjusted border-radius */
+      background: #000000;
+      align-items: center;
+      margin-right: -100px;
+      height: 45px;
+
+      .image-upload{
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .toggle-btn {
+      cursor: pointer;
+      background: transparent;
+      border: 0;
+      outline: none;
+      position: relative;
+      text-align: center;
+
+      .material-symbols-outlined {
+        font-size: 24px; /* Adjusted font size */
+        background: none;
+        vertical-align: middle;
+      }
+    }
+
+    .search-input {
+      padding-left: 40px; /* Adjusted padding-left */
+      margin-left: 70px; /* Negative margin to offset padding */
+      width: calc(200px + 70px); /* Adjusted width to account for padding */
+      // box-sizing: border-box; /* Ensure padding is included in the width */
+    }
+
+    input {
+      // width: 00px;
+      height: 24px;
+      padding: 8px;
+      margin-right: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      outline: none;
+    }
+
+    .material-symbols-outlined {
+      padding: 9px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 300px;
+      padding: 8px;
+      margin-right: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      outline: none;
+    }
+
+    button {
+      padding: 8px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+
+  .dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-radius: 4px;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    gap: 2px;
+    margin-top: 0.4rem;
+    padding-top: 0.2rem;
+    height: 550px;
+    overflow-y: auto;
+    flex-direction: column;
+
+    .search-history {
+      margin-top: 10px;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+
+      .search-text-div {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+
+        .search-text-align-left {
+          width: 100%;
+          display: flex;
+          align-items: start;
+          transition: background-color 0.3s; /* Add a smooth transition for background-color changes */
+          p {
+            text-align: left;
+            font-size: 20px;
+            margin-top: 9px;
+            margin-bottom: 9px;
+            margin-left: 20px;
+          }
+
+          &:hover {
+            background-color: #91959b78; /* Change the background color on hover */
+            font-weight: bold;
+          }
+          cursor: pointer; /* Add a pointer cursor to indicate clickability */
+        }
+      }
+
+      .expand-hr {
+        width: 100%;
+        border: none;
+        height: 1px;
+        background-color: #ccc;
+      }
+    }
+
+    .recommended-search {
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 0.4em;
+
+      strong {
+        font-weight: bold;
+      }
+      
+      
+      .expand-to-parent{
+        width: 400px;
+        // transition: transform 0.2s ease-in-out;
+      }
+
+      .expand-to-parent-a{
+        width: 400px;
+        img{
+         width: 100px;
+         height: 20px;
+        }
+      }
+
+      // &:hover {
+      //   transform: scale(1.02);
+      // }
+      
+      img {
+        width: 100px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-right: 12px;
+      }
+
+      p {
+        margin: 0;
+        font-size: 18px;
+        color: #333;
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.card-object {
+
+  
+    .credit-card {
+      background-color: #d7d7d7d2;
+      border-radius: 10px;
+      width: 250px;
+      height: 100px;
+      padding: 20px;
+      margin: 10px 0;
+      
+      position: relative;
+      overflow: hidden;
+    }
+
+    .chip {
+      height: 30px;
+      width: 40px;
+      background: linear-gradient(135deg, #444 25%, transparent 25%) 0 0,
+        linear-gradient(225deg, #444 25%, transparent 25%) 0 0,
+        linear-gradient(315deg, #444 25%, transparent 25%) 0 0,
+        linear-gradient(45deg, #444 25%, transparent 25%) 0 0,
+        linear-gradient(135deg, #999 25%, transparent 25%) 0 5px,
+        linear-gradient(225deg, #999 25%, transparent 25%) 5px 0,
+        linear-gradient(315deg, #999 25%, transparent 25%) 5px 0,
+        linear-gradient(45deg, #999 25%, transparent 25%) 5px 0;
+      background-size: 10px 10px;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    .card-number {
+      font-size: 18px;
+      margin-top: 20px;
+      margin-bottom: 40px;
+
+    }
+
+    .card-holder {
+      font-size: 16px;
+    }
+
+    .expiry-date {
+      position: absolute;
+      
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .expiry-date span {
+ 
+      font-size: 16px;
+    }
+
+    .strip {
+      height: 20px;
+      width: 100%;
+      background-color: black;
+    }
+  }

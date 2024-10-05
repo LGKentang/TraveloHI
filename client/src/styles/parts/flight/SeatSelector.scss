@@ -1,0 +1,137 @@
+.seat-selector-component {
+  padding: 20px;
+  display: flex;
+  // width:  50vw;
+  gap: 20px;
+
+  .left-component-placeholder {
+    display: flex;
+    flex-direction: column;
+
+    .seat-airline-logo-placeholder {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+
+      h2 {
+        font-weight: bold;
+      }
+
+      img {
+        width: 120px;
+      }
+    }
+    .origin-to-destination {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+  }
+
+  .right-component-placeholder {
+    // width: 100%;
+    height: 300px;
+    overflow-y: auto;
+
+    .seating-chart {
+      display: grid; // Use grid layout
+      grid-gap: 10px; // Define the gap between grid items
+
+      .lining {
+        display: flex;
+        white-space: nowrap;
+        gap: 10px;
+        align-items: center;
+        margin-top: 10px;
+        p{
+          font-size: 16px;
+        }
+      }
+
+      hr {
+        width: 100%;
+        height: 1px;
+        color: black;
+        background-color: rgb(106, 106, 106);
+      }
+
+      .seat {
+        .seat-row {
+          display: grid;
+          gap: 10px;
+
+          .seat-col {
+            display: flex;
+            gap: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.seat-object {
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  transition: background-color 0.2s ease, color 0.2s ease, font-weight 0.2s ease; // Smooth transition
+  user-select: none; // Disable text selection
+
+
+  &.first-class {
+    // background-color: rgb(217, 216, 216); // First class background color
+      background-color: #000000; // First class hover background color
+      color: white;
+  }
+
+  &.business-class {
+    // background-color: #67bff5;// Business class background color
+      background-color: #1798e9; // Business class hover background color
+      color: white;
+  }
+
+  &.economy-class {
+      background-color: #42c775; // Economy class hover background color
+      // background-color: rgb(126, 255, 146); // Economy class background color
+      color: white;
+  }
+
+  &.grayscale {
+    background-color: #CCCCCC; // Soft gray background color
+    color: #8b8b8ba9; // Light gray text color with reduced opacity
+  }
+  
+
+  &:hover {
+    &.first {
+      background-color: #000000; // First class hover background color
+      
+    }
+
+    &.second {
+      background-color: #1798e9; // Business class hover background color
+    }
+
+    &.third {
+      background-color: #42c775; // Economy class hover background color
+    }
+    
+    &.first-class {
+      background-color: #000000; // First class hover background color
+      
+    }
+
+    &.business-class {
+      background-color: #1798e9; // Business class hover background color
+    }
+
+    &.economy-class {
+      background-color: #42c775; // Economy class hover background color
+    }
+    color: white;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,141 @@
+// main.scss
+@import "../global.css";
+
+// .container {
+//   position: relative;
+// }
+
+@font-face {
+  font-family: "cream";
+  src: url("./font/cream-DEMO.otf") format("opentype");
+}
+
+.paper {
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.338);
+  padding: 16px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.paper-np {
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.338);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.paper-nps {
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.middleize {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.middleize-c {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nav-pad {
+  margin-top: 120px;
+}
+
+.both-pad {
+  margin-top: 150px;
+  margin-bottom: 30px;
+}
+
+.flex-c {
+  flex-direction: column;
+}
+
+.centerize {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.timer-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.6); /* Adjust the alpha value to change transparency */
+  // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  color: white;
+  padding: 4px 4px;
+}
+
+.btn-container {
+  text-align: center;
+}
+
+.dfc {
+  display: flex;
+  align-items: center;
+}
+
+.g-10 {
+  gap: 10px;
+}
+
+.g-5 {
+  gap: 5px;
+}
+
+.g-15 {
+  gap: 15px;
+}
+
+.g-20 {
+  gap: 20px;
+}
+.g-40 {
+  gap: 40px;
+}
+.content {
+  padding: 80px 20px 20px;
+}
+
+.expand {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grayscale-div {
+  filter: grayscale(100%);
+  // background-color: rebeccapurple;
+}
+
+.cannot-click {
+  pointer-events: none;
+}
+
+body {
+  // height: 200vh;
+  font-family: "Nunito", sans-serif;
+}
+
+@import "../components/Button/button.scss";
+@import "../components/Modal/modal.scss";
+@import "../login/Login.scss";

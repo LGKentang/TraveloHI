@@ -1,0 +1,69 @@
+// ALERTS
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.alert {
+    display: block;
+    text-align: left;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    position: relative;
+    overflow: hidden;
+
+    @if $radius {
+        border-radius: $border-radius;
+    }
+
+    &.dismissable {
+        padding-right: 40px;
+    }
+
+    .alert-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 5px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        cursor: pointer;
+
+    }
+}
+
+
+@each $color,
+$value in $colors {
+    @if ($color !='white') and ($color !='light') {
+
+        .alert.#{$color} {
+            background: $value;
+            color: white;
+
+            .alert-close {
+                &:hover {
+                    background: darken($value, 10%);
+                    color: white;
+                }
+            }
+        }
+
+    }
+
+    @if ($color=='light') {
+
+        .alert.#{$color} {
+            background: $value;
+            color: black;
+
+            .alert-close {
+                &:hover {
+                    background: darken($value, 10%);
+                    color: black;
+                }
+            }
+        }
+
+    }
+}

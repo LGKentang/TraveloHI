@@ -1,0 +1,454 @@
+// NAVBAR
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+/*
+* * Prevent Overflow hidden for Sidebar Menu and Modal
+*/
+
+.noScroll {
+    overflow: hidden !important;
+}
+
+/*
+* * Fixed Top Menu
+*/
+.fixed-top {
+    width: 100%;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+}
+
+/*
+* * Main Navbar scss
+*/
+.navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0 $default-padding;
+
+    * {
+        transition: $transition;
+    }
+
+    /*
+    * * Container and Container fluid 
+    */
+    &>.container,
+    &>.container-fluid {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    /*
+    * * Navbar Brand | Logo
+    */
+    .brand {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-right: 16px;
+        line-height: inherit;
+        white-space: nowrap;
+    }
+
+    /*
+    * * Navigation Menu Main Container
+    */
+    .menu-box {
+        display: none;
+        align-items: center;
+        flex-basis: 100%;
+
+        /*
+        * * Navigation Menu | UL TAG
+        */
+        .menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+
+            /*
+            * * Navigation Item | LI TAG
+            */
+            .nav-item {
+                margin: 0;
+
+                /*
+                * * Navigation Link | A TAG
+                */
+                .nav-link {
+                    display: inline-block;
+                }
+            }
+
+            /*
+            * * Default fix for all LI tags inside the Menu
+            */
+            li {
+                list-style: none;
+                padding: 0;
+            }
+        }
+    }
+
+    /*
+    * * Sidebar Menu Toggler on Mobile
+    */
+    .toggler {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: white;
+        background-color: white;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: auto;
+        padding: 10px 15px;
+
+        border: none;
+        outline: none;
+        cursor: pointer;
+
+        @if $radius {
+            border-radius: $border-radius;
+        }
+
+        &:hover {
+            color: white;
+            background: darken($primary, 10%) !important;
+        }
+    }
+
+
+    /*
+    * * Default Butter Cake Menu Styling for Navbar
+    * * Remove .default-nav from the .navbar to remove all the defaults styles,
+    * * that applied by Butter Cake OR You can change the scss below
+    */
+    &.default-nav {
+        background-color: $white;
+
+        /*
+        * * Default Navbar Styles
+        */
+
+        .brand {
+            padding-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            a {
+                display: block;
+                font-weight: 400;
+                font-size: $h3;
+                color: $primary;
+
+                &:hover {
+                    color: darken($primary, 15%) !important;
+                }
+
+                img {
+                    display: block;
+                }
+            }
+        }
+
+        .menu {
+            .nav-link {
+                color: $secondary;
+                padding: 20px 25px;
+
+                &:focus,
+                &:hover {
+                    color: $white;
+                    background-color: $primary;
+                }
+            }
+
+            .active {
+                .nav-link {
+                    color: $white;
+                    background-color: $primary;
+                }
+            }
+        }
+
+        .slidedown,
+        .sideNavbar {
+            background-color: $white !important;
+        }
+
+        /*
+        * * Primary Navbar Styles
+        */
+
+        @each $bg,
+        $value in $colors {
+
+
+
+            &.bg-#{$bg} {
+
+                background: $value;
+
+                .brand {
+                    a {
+                        color: $white;
+
+                        &:hover {
+                            color: darken($value, 15%) !important;
+                        }
+                    }
+                }
+
+                .menu-close {
+                    background: darken($value, 15%);
+
+                    &:hover {
+                        background: darken($value, 20%);
+                    }
+
+                }
+
+                .menu {
+                    .nav-link {
+                        color: $white;
+
+                        &:focus,
+                        &:hover {
+                            color: $white;
+                            background-color: darken($value, 10%);
+                        }
+                    }
+
+                    .active {
+                        .nav-link {
+                            color: $white;
+                            background-color: darken($value, 10%);
+                        }
+                    }
+                }
+
+                .toggler {
+                    background-color: darken($value, 5%) !important;
+
+                    &:hover {
+                        background: darken($value, 10%) !important;
+                    }
+                }
+
+                .slidedown,
+                .sideNavbar {
+                    background-color: $value !important;
+                }
+
+            }
+
+        }
+
+    }
+}
+
+
+
+
+
+// NAVBAR EXPANDED
+.navbar.expanded {
+
+    // TOGGLER
+    .toggler {
+        display: none !important;
+    }
+
+    // MENU BOX
+    .menu-box {
+        display: flex !important;
+    }
+
+    // MENU
+    .menu {
+        flex-direction: row;
+    }
+
+    // CONTAINER
+    &>.container,
+    &>.container-fluid {
+        flex-wrap: nowrap;
+    }
+
+}
+
+
+/*
+* * Warning upating without proper knowledge can break the Navbar 
+*/
+
+// RESPONSIVE CODES | TOGGLE BAR
+
+@each $size,
+$breakpoint in $grid-array {
+    @media (min-width: $breakpoint) {
+        .navbar.expand#{$size} {
+
+            // TOGGLER
+            .toggler {
+                display: none;
+            }
+
+            // MENU BOX
+            .menu-box {
+                display: flex !important;
+            }
+
+            // MENU
+            .menu {
+                flex-direction: row;
+            }
+
+            // CONTAINER
+            &>.container,
+            &>.container-fluid {
+                flex-wrap: nowrap;
+            }
+        }
+
+    }
+}
+
+
+
+/*
+* * Sidebar styles for Mobile
+*/
+.sideNavbar {
+    transition: all 0.5s !important;
+    display: block !important;
+    max-width: 300px;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden !important;
+    overflow-y: auto;
+
+    position: fixed;
+    top: 0;
+    height: 100%;
+    left: -100%;
+    z-index: 1250;
+    padding-bottom: 50px;
+
+    // MENU
+    .menu {
+        flex-direction: column;
+
+        .nav-item {
+            position: relative;
+            width: 100%;
+            text-align: center;
+
+            >.btn {
+                margin: 10px 0 !important;
+            }
+
+            >.input {
+                margin: 10px 0 !important;
+            }
+        }
+
+        .nav-link {
+            display: block;
+            width: 100%;
+            padding: 10px 10px !important;
+            text-align: center;
+        }
+
+    }
+
+    // DROPDOWN
+    .dropdown {
+        &>.dropdown-menu {
+            position: unset !important;
+            background: white;
+            max-width: 100% !important;
+            min-width: 100% !important;
+            margin-top: 0 !important;
+            border-radius: 0 !important;
+            border: none;
+        }
+    }
+
+    // SIDEBAR SHOWING
+    &.toggled {
+        left: 0;
+    }
+
+    // SIDEBAR MENU CLOSE
+    .menu-close {
+        display: block !important;
+        background: $secondary;
+        color: $white;
+        text-align: center;
+        padding: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+
+        &:hover {
+            background: $dark;
+        }
+    }
+}
+
+// MOBILE SIDEBAR TOGGLER
+.toggled~.shadow-fixed {
+    width: 100%;
+    min-height: 100vh;
+    background: rgba(black, 0.5);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 500;
+}
+
+// MENU CLOSE BUTTON ON SIDEBAR HIDDEN ON DESKTOP DEVICES
+.menu-close {
+    display: none;
+}
+
+// SLIDEDOWN
+.slidedown {
+    overflow: hidden;
+    display: block !important;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 1150;
+    width: 100%;
+
+    .menu {
+        flex-direction: column !important;
+        width: 100%;
+
+        .nav-item {
+            width: 100%;
+            text-align: center;
+
+            .nav-link {
+                width: 100%;
+            }
+        }
+    }
+}

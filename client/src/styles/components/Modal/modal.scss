@@ -1,0 +1,84 @@
+
+.modal {
+    opacity: 0;
+    pointer-events: none;
+    display: none; /* Set display to none to hide the modal */
+}
+
+.active {
+    opacity: 1;
+    pointer-events: auto; 
+    display: block; /* Set display to none to hide the modal */
+}
+
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background: rgba(20, 20, 20, 0.605);
+    z-index: 999;
+}
+
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #f1f1f1;
+    border-radius: 3px;
+    max-width: 600px;
+    min-width: 300px;
+    animation: fadeInUp 0.5s ease;
+    z-index: 1000;
+}
+
+.modal-content-3 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #f1f1f1;
+    border-radius: 3px;
+    // max-width: 600px;
+    // min-width: 300px;
+    animation: fadeInUp 0.5s ease;
+    z-index: 1000000;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 100%); 
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes fadeOutDown {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, 100%); 
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    // padding: 5px 7px;
+    cursor: pointer;
+}
+
+

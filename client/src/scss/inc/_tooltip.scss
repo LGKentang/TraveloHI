@@ -1,0 +1,106 @@
+// TOOL TIP
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+[data-tip] {
+    position: relative;
+
+    &.tooltip-active,
+    &:focus,
+    &:hover {
+
+        &::before,
+        &::after {
+            visibility: visible;
+            margin-top: 0 !important;
+        }
+    }
+}
+
+// ARROW
+[data-tip]::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 4px 6px 0 6px;
+    border-style: solid;
+    border-color: $dark transparent transparent transparent;
+    z-index: 100;
+    margin-top: 10px;
+}
+
+// CONTAINER
+[data-tip]::after {
+    content: attr(data-tip);
+    position: absolute;
+    left: 50%;
+    top: -6px;
+    display: block;
+    transform: translateX(-50%) translateY(-100%);
+    background: $dark;
+    color: #fff;
+    padding: 10px;
+    font-size: 12px;
+    min-width: 150px;
+    pointer-events: none;
+    margin-top: 10px;
+    border-radius: 4px;
+    transition: $transition;
+}
+
+[data-tip]::before,
+[data-tip]::after {
+    visibility: hidden;
+    user-select: none;
+    pointer-events: none;
+}
+
+
+[data-tip-position="left"]::before {
+    left: 0%;
+    top: 50%;
+    margin-left: -12px;
+    transform: translatey(-50%) rotate(-90deg)
+}
+
+[data-tip-position='top']::before {
+    left: 50%;
+}
+
+[data-tip-position='bottom']::before {
+    top: 100%;
+    margin-top: 8px;
+    transform: translateX(-50%) translateY(-100%) rotate(-180deg)
+}
+
+[data-tip-position='right']::before {
+    left: 100%;
+    top: 50%;
+    margin-left: 1px;
+    transform: translateY(-50%) rotate(90deg)
+}
+
+[data-tip-position='left']::after {
+    left: 0%;
+    top: 50%;
+    margin-left: -8px;
+    transform: translateX(-100%) translateY(-50%);
+}
+
+[data-tip-position='top']::after {
+    left: 50%;
+}
+
+[data-tip-position='bottom']::after {
+    top: 100%;
+    margin-top: 8px;
+    transform: translateX(-50%) translateY(0%);
+}
+
+[data-tip-position='right']::after {
+    left: 100%;
+    top: 50%;
+    margin-left: 8px;
+    transform: translateX(0%) translateY(-50%);
+}

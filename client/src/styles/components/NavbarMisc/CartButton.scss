@@ -1,0 +1,41 @@
+.cart-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.367);
+  border-radius: 40px;
+  padding: 12px 14px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+
+  &.hovered {
+      // Your styles for the hovered state...
+    }
+  }
+  
+  .cart-dropdown {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 1;
+    margin-top: 2px;
+    top: 100%; 
+    left: -90%; 
+    cursor: default;
+
+    .cart-select{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.367);
+      border-radius: 40px;
+      padding: 2px;
+      user-select: none;
+      position: relative;
+      width: 100%;
+    }
+  }

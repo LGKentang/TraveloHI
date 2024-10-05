@@ -1,0 +1,256 @@
+// MIXINS
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// REGULAR BUTTON
+@mixin button($color, $textColor) {
+    border: 1px solid $color;
+    color: $textColor !important;
+    background-color: $color;
+
+    // Light Button
+    @if $color !="white" {
+
+
+        &.active,
+        &:focus,
+        &:hover {
+            color: $textColor !important;
+            background-color: darken($color, 10%) !important;
+            border-color: darken($color, 10%) !important;
+        }
+
+        &:focus,
+        &:active {
+            box-shadow: 0 0 0 2px rgba($color, 0.5) !important;
+        }
+
+
+        &.outline {
+            border-width: 2px;
+
+            &:hover {
+                color: $textColor !important;
+                border-color: $color !important;
+                background-color: $color !important;
+            }
+
+            &:focus,
+            &:active {
+                background-color: darken($color, 20%) !important;
+            }
+        }
+
+    }
+
+
+    @if $color !="#f4f5f6" {
+
+
+        &.active,
+        &:focus,
+        &:hover {
+            color: $textColor !important;
+            background-color: darken($color, 10%) !important;
+            border-color: darken($color, 10%) !important;
+        }
+
+        &:focus,
+        &:active {
+            box-shadow: 0 0 0 2px rgba($color, 0.5) !important;
+        }
+
+
+        &.outline {
+            border-width: 2px;
+
+            &:hover {
+                color: $textColor !important;
+                border-color: $color !important;
+                background-color: $color !important;
+            }
+
+            &:focus,
+            &:active {
+                background-color: darken($color, 20%) !important;
+            }
+        }
+
+    }
+
+    // Light Button
+    @if $color==$white {
+        border-color: rgba(0, 0, 0, 0.125) !important;
+
+        &.active {
+            color: black !important;
+        }
+    }
+
+    // Light Button
+    @if $color==$light {
+        border-color: rgba(0, 0, 0, 0.125) !important;
+
+        &.active {
+            color: black !important;
+        }
+    }
+
+}
+
+// MAKE BUTTONS
+@mixin makeButton {
+
+    // REGULAR BUTTON
+    @each $color,
+    $value in $btn-colors {
+
+
+
+        // Light Button
+        @if ($value==$light) {
+            .btn.#{$color} {
+                background-color: $value;
+                color: $dark !important;
+                border-color: $value !important;
+
+                &:focus,
+                &:active,
+                &:hover {
+                    color: $dark !important;
+                    background-color: darken($value, 10%) !important;
+                    border-color: darken($value, 10%) !important;
+                }
+            }
+
+            // Outline
+            .btn.#{$color}.outline {
+                color: $dark !important;
+                background-color: transparent;
+                box-shadow: none !important;
+
+                &:focus,
+                &:active,
+                &:hover {
+                    color: $dark !important;
+                    background-color: darken($value, 10%) !important;
+                    border-color: darken($value, 10%) !important;
+                }
+            }
+        }
+
+        @else {
+
+            // Regular Button
+            .btn.#{$color} {
+                @include button($value, $white);
+            }
+
+            // Regular Outline Button
+            .btn.#{$color}.outline {
+                color: $value !important;
+                background-image: none;
+                background-color: transparent;
+                box-shadow: none !important;
+
+                &:focus {
+                    color: white !important;
+                    border-color: darken($value, 10%) !important;
+                }
+            }
+        }
+
+    }
+
+}
+
+
+// MAXIMUM BREAK POINT
+@mixin max-breakpoint($sm : 0) {
+    @media(max-width: $sm) {
+        @content;
+    }
+}
+
+// MINIMUM BREAK POINT
+@mixin min-breakpoint($sm : 0) {
+    @media(min-width: $sm) {
+        @content;
+    }
+}
+
+
+// DISPLAY
+@mixin display($name) {
+
+    .d-none#{$name},
+    .hide#{$name} {
+        display: none !important;
+    }
+
+    .d-block#{$name} {
+        display: block !important;
+    }
+
+    .d-inline-block#{$name} {
+        display: inline-block !important;
+    }
+
+    .d-flex#{$name} {
+        display: flex !important;
+    }
+
+    .fa-center#{$name} {
+        align-items: center !important;
+    }
+
+    .fa-baseline#{$name} {
+        align-items: baseline !important
+    }
+
+    .fa-start#{$name} {
+        align-items: flex-start !important;
+    }
+
+    .fa-end#{$name} {
+        align-items: flex-end !important;
+    }
+
+    .fa-stretch#{$name} {
+        align-items: stretch !important;
+    }
+
+    .fa-end#{$name} {
+        align-items: flex-end !important;
+    }
+
+    .fj-center#{$name} {
+        justify-content: center !important;
+    }
+
+    .fj-baseline#{$name} {
+        justify-content: baseline !important;
+    }
+
+    .fj-start#{$name} {
+        justify-content: flex-start !important;
+    }
+
+    .fj-end#{$name} {
+        justify-content: flex-end !important;
+    }
+
+    .fj-between#{$name} {
+        justify-content: space-between !important;
+    }
+
+    .fj-around#{$name} {
+        justify-content: space-around !important;
+    }
+}
+
+// ORDER
+@mixin order($num, $name) {
+    .order#{$name}-#{$num} {
+        order: $num;
+    }
+}

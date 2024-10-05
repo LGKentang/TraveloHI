@@ -1,0 +1,355 @@
+.profile-frame {
+  display: grid;
+  width: 70%;
+  height: 600px;
+  margin-bottom: 40px;
+  grid-template-columns: 30% 70%;
+  gap: 30px;
+
+
+
+  .profile-selection {
+    width: 100%;
+    // border: 1px solid rgb(181, 181, 181);
+
+    .prof-pic-frame {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 100%;
+      padding-top: 10px;
+      height: 12%;
+
+      .img-frame {
+        width: 40%;
+        // flex:30%;
+        height: 100%;
+        // background-color: red;
+        img {
+          width: 60px;
+          height: 60px;
+          // height: 70%;
+          border-radius: 50%;
+          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .prof-desc-frame {
+        // flex:40%;
+        width: 50%;
+        word-wrap: break-word;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        justify-content: center;
+        align-items: center;
+        padding-right: 20px;
+        // white-space: nowrap;
+        // background-color: yellow;
+      }
+
+      //  background-color: blue;
+    }
+
+    .selected {
+      background-color: rgb(92, 159, 253);
+      color: white;
+    }
+
+    .profile-btns {
+      display: flex;
+      border: none;
+      align-items: center;
+      justify-content: start;
+      gap: 14px;
+      width: 100%;
+      padding: 4px;
+      padding-left: 30px;
+      color: black;
+
+      font-size: 18px;
+      background-color: #ffffff;
+      font-family: Nunito;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      border-radius: 2px;
+
+      .material-symbols-outlined {
+        color: rgb(82, 146, 255);
+      }
+
+      &:hover {
+        background-color: #c7c7c7;
+      }
+    }
+
+    .profile-btns-select {
+      display: flex;
+      border: none;
+      align-items: center;
+      justify-content: start;
+      gap: 14px;
+      width: 100%;
+      padding: 4px;
+      padding-left: 30px;
+      color: rgb(255, 255, 255);
+
+      font-size: 18px;
+      background-color: #50a5fa;
+      font-family: Nunito;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      border-radius: 2px;
+
+      .material-symbols-outlined {
+        color: rgb(255, 255, 255);
+      }
+    }
+  }
+
+  .profile-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+    padding: 0 20px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+     
+    }
+  
+    input {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      outline: none;
+      margin-bottom: 12px;
+    }
+  
+    h2 {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 24px;
+    }
+    // background-color: red;
+
+    .card-profile-page {
+      height: 100%;
+      padding: 5%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      // background-color: red;
+
+
+      .my-wallet{
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        .material-symbols-outlined{
+          color: rgb(92, 159, 253);
+        }
+
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      /* Style the scrollbar */
+.list-of-cards::-webkit-scrollbar {
+  height: 6px;
+}
+
+/* Track */
+.list-of-cards::-webkit-scrollbar-track {
+  background: transparent; /* Set a transparent background color for the track */
+}
+
+/* Handle */
+.list-of-cards::-webkit-scrollbar-thumb {
+  background: #888; /* Set a background color for the scrollbar thumb */
+  border-radius: 1px; /* Add some border-radius to make the scrollbar thumb rounded */
+}
+      .list-of-cards {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        overflow-x: auto; /* Use 'auto' to only show the scrollbar when necessary */
+        overflow-y: hidden;
+        height: 100%;
+        padding: 0 10px; /* Add padding to the left and right */
+
+        .card-object {
+          width: calc(100% - 20px); /* Adjust card width to accommodate gap */
+
+  
+          .credit-card {
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            width: 250px;
+            height: 100px;
+            padding: 20px;
+            
+            position: relative;
+            overflow: hidden;
+          }
+
+          .chip {
+            height: 30px;
+            width: 40px;
+            background: linear-gradient(135deg, #444 25%, transparent 25%) 0 0,
+              linear-gradient(225deg, #444 25%, transparent 25%) 0 0,
+              linear-gradient(315deg, #444 25%, transparent 25%) 0 0,
+              linear-gradient(45deg, #444 25%, transparent 25%) 0 0,
+              linear-gradient(135deg, #999 25%, transparent 25%) 0 5px,
+              linear-gradient(225deg, #999 25%, transparent 25%) 5px 0,
+              linear-gradient(315deg, #999 25%, transparent 25%) 5px 0,
+              linear-gradient(45deg, #999 25%, transparent 25%) 5px 0;
+            background-size: 10px 10px;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+          }
+
+          .card-number {
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+
+          }
+
+          .card-holder {
+            font-size: 16px;
+          }
+
+          .expiry-date {
+            position: absolute;
+            
+            bottom: 20px;
+            right: 20px;
+          }
+
+          .expiry-date span {
+       
+            font-size: 16px;
+          }
+
+          .strip {
+            height: 20px;
+            width: 100%;
+            background-color: black;
+          }
+        }
+      }
+
+      .banking-page{
+
+        .add-bank-modal{
+          display: flex;
+          flex-direction: column;
+          padding: 24px;
+          overflow-y: auto;
+          height: 200px;
+          width: 300px;
+
+          .option-bank{
+            img{
+              width: 100px;
+              height: 100px;
+            }
+          }
+        }
+
+
+        .add-banking-detail-object {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          // background-color: red;
+          padding: 2px;
+          user-select: none;
+          cursor: pointer;
+        }
+
+      }
+      
+      .add-card-card {
+        // width: 200px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .add-card-modal{
+          display: flex;
+          flex-direction: column;
+          padding: 24px;
+          overflow-y: auto;
+          height: 400px;
+        }
+
+        // background-color: blue;
+
+        .add-card-object {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          // background-color: red;
+          padding: 2px;
+          user-select: none;
+          cursor: pointer;
+        }
+      }
+
+      // background-color: red ;
+    }
+  }
+}
+
+.profile-picture-page {
+  padding: 10%;
+  height: 100%;
+  // background-color: red;
+
+  .profile-picture-update{
+    .checkbox-group{
+      label {
+          display: block;
+          padding-left: 15px;
+          text-indent: -15px;
+        }
+        input {
+          width: 13px;
+          height: 13px;
+          padding: 0;
+          margin:0;
+          vertical-align: bottom;
+          position: relative;
+          top: -1px;
+          *overflow: hidden;
+        }
+  }
+  }
+
+
+  img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.order-page{
+  padding: 10%;
+  height: 100%;
+}

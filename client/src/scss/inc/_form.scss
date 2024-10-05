@@ -1,0 +1,451 @@
+// FORM
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+form {
+    width: 100%;
+}
+
+.input {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    min-height: 45px;
+    height: 45px;
+    padding: 10px 10px;
+    background-color: white;
+    outline: none;
+    border: 1px solid darken($light, 10%);
+    transition: $transition;
+
+    @if $radius {
+        border-radius: $border-radius;
+    }
+
+    &:focus {
+        border-color: $primary;
+        box-shadow: 0 0 0 2px rgba($primary, 0.5);
+
+        &~.append-icon,
+        &~.pre-append-icon {
+            i {
+                color: $primary !important;
+            }
+        }
+    }
+
+    @each $bg,
+    $value in $colors {
+
+        &.#{$bg} {
+            border: 1px solid $value;
+
+            &:focus {
+                border-color: $value;
+                box-shadow: 0 0 0 2px rgba($value, 0.5);
+
+                &~.append-icon,
+                &~.pre-append-icon {
+                    i {
+                        color: $value !important;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+select {
+    appearance: none;
+    padding-right: 10px;
+    appearance: none;
+    position: relative;
+    background-color: transparent;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' height='10px' width='15px'%3E%3Ctext x='0' y='10' fill='gray'%3E%E2%96%BE%3C/text%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: right center;
+    background-clip: border-box;
+
+    &::-ms-expand {
+        display: none;
+    }
+
+    option:not([disabled]) {
+        color: $dark;
+    }
+
+    option[disabled] {
+        color: $gray;
+    }
+
+    &[multiple] {
+        overflow-y: auto;
+        min-height: 125px;
+        background-image: none !important;
+
+        option {
+            padding: 5px;
+
+            &:checked {
+                background: $primary !important;
+            }
+        }
+
+        &:checked {
+            background: $primary !important;
+        }
+
+
+    }
+
+    &.input {
+        padding: 10px 8px;
+    }
+
+}
+
+
+textarea.input {
+    min-height: 150px !important;
+}
+
+textarea {
+    resize: vertical;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 10px;
+    user-select: none;
+}
+
+.group {
+    padding: $default-padding 0;
+
+    .message,
+    .success-message,
+    .error-message {
+        display: block;
+        font-size: 12px;
+        padding-top: 4px;
+        padding-left: 4px;
+        font-weight: bold;
+    }
+
+    .error-message {
+        color: $danger;
+    }
+
+    .success-message {
+        color: $success;
+    }
+
+    @each $bg,
+    $value in $colors {
+
+        .is-#{$bg},
+        &.is-#{$bg} {
+
+            .append-icon,
+            .pre-append-icon {
+                i {
+                    transition: $transition;
+                    color: $value;
+                }
+            }
+
+            .input {
+                background: rgba($value, 0.1);
+                color: darken($value, 10%) !important;
+                border-color: $value;
+
+                &:focus {
+                    background: white;
+                    color: black !important;
+                }
+            }
+        }
+    }
+}
+
+.input-group {
+    display: flex;
+    position: relative;
+
+    &.input-addon {
+        padding: 0 !important;
+
+        .pre-append-icon {
+            position: absolute;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transition: $transition;
+        }
+
+        .append-icon {
+            position: absolute;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 100%;
+            top: 0;
+            right: 0;
+            transition: $transition;
+        }
+
+
+        &.input-addon-both input {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        &.input-addon-left input {
+            padding-left: 40px;
+        }
+
+        &.input-addon-right input {
+            padding-right: 40px;
+        }
+
+    }
+
+}
+
+.radio-group,
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    label {
+        margin: 0;
+        margin-left: 10px;
+    }
+}
+
+[type="radio"],
+[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.custom-radio,
+.custom-checkbox {
+    position: relative;
+    display: block;
+
+    input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+
+        &:checked~label::before {
+            color: #fff;
+            background-color: $primary;
+            transition: $transition;
+        }
+    }
+
+    label {
+        margin-bottom: 0;
+        padding-left: 25px;
+
+    }
+}
+
+
+// CUSTOM CHECKBOX
+.custom-checkbox {
+    position: relative;
+    display: block;
+
+    input {
+        &:checked~label::after {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+        }
+
+        &:checked:focus~label::before {
+            box-shadow: 0 0 0 1px #fff, 0 0 2px 4px rgba($primary, .25);
+        }
+    }
+
+
+    label {
+        transition: $transition;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            display: block;
+            width: 16px;
+            height: 16px;
+            pointer-events: none;
+            user-select: none;
+            background-color: #dee2e6;
+
+            @if $radius {
+                border-radius: $border-radius;
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            display: block;
+            width: 16px;
+            height: 16px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 50% 50%;
+        }
+    }
+}
+
+// CUSTOM RADIO
+.custom-radio {
+
+    input {
+        &:checked~label::after {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23fff'/%3E%3C/svg%3E");
+        }
+
+        &:focus~label::before {
+            transition: $transition;
+            box-shadow: 0 0 0 1px #fff, 0 0 2px 4px rgba($primary, .25);
+        }
+    }
+
+    label {
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            display: block;
+            width: 16px;
+            height: 16px;
+            pointer-events: none;
+            user-select: none;
+            background-color: #dee2e6;
+            border-radius: 50%;
+
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            display: block;
+            width: 16px;
+            height: 16px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 50% 50%;
+        }
+    }
+
+}
+
+
+// TOGGLE SLIDE
+.checkbox-toggle {
+    display: inline-flex;
+    align-items: center;
+
+    label {
+        margin: 0 !important;
+    }
+}
+
+
+.checkbox-toggle {
+    input[type='checkbox'] {
+        display: block;
+        margin: 0 10px 0 0;
+        appearance: none;
+        -webkit-appearance: none;
+        border: none;
+        outline: none;
+        background-color: darken($light, 10%);
+        width: 50px;
+        height: 22px;
+        border-radius: 3px;
+        cursor: pointer;
+        position: relative;
+        transition: background-color 1s;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .2);
+
+    }
+
+    &.rounded {
+
+        input[type='checkbox']:after,
+        input[type='checkbox'] {
+            border-radius: 35px !important;
+        }
+    }
+
+
+}
+
+
+.checkbox-toggle input[type='checkbox']:after {
+    content: attr(data-off);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2px;
+    text-transform: uppercase;
+    font-size: 12px;
+    width: 50%;
+    height: calc(100% - 4px);
+    font-weight: bold;
+    background-color: #fdfdfd;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+    background: rgb(255, 255, 255);
+    transition: .5s all;
+}
+
+.checkbox-toggle input[type='checkbox']:checked {
+    background-color: darken($light, 25%);
+}
+
+@each $bg,
+$value in $colors {
+
+    .checkbox-toggle.#{$bg} input[type='checkbox']:checked {
+        background-color: $value !important;
+    }
+
+    .checkbox-toggle.#{$bg} input[type='checkbox']:checked:after {
+        color: $value !important;
+    }
+
+}
+
+.checkbox-toggle input[type='checkbox']:checked:after {
+    content: attr(data-on);
+    left: calc(50% - 2px);
+}

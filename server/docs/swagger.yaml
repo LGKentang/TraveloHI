@@ -1,0 +1,269 @@
+definitions:
+  gorm.DeletedAt:
+    properties:
+      time:
+        type: string
+      valid:
+        description: Valid is true if Time is not NULL
+        type: boolean
+    type: object
+  models.ErrorResponse:
+    properties:
+      code:
+        type: integer
+      message:
+        type: string
+    type: object
+  models.Hotel:
+    properties:
+      address:
+        type: string
+      basePrice:
+        type: number
+      createdAt:
+        type: string
+      deletedAt:
+        $ref: '#/definitions/gorm.DeletedAt'
+      description:
+        type: string
+      id:
+        type: integer
+      mainImagePath:
+        type: string
+      name:
+        type: string
+      picturePathJSON:
+        items:
+          type: integer
+        type: array
+      rating:
+        type: number
+      searchCount:
+        type: integer
+      stars:
+        type: integer
+      updatedAt:
+        type: string
+    type: object
+  models.Promo:
+    properties:
+      createdAt:
+        type: string
+      deletedAt:
+        $ref: '#/definitions/gorm.DeletedAt'
+      id:
+        type: integer
+      imagePath:
+        type: string
+      percentage:
+        type: number
+      title:
+        type: string
+      type:
+        type: string
+      updatedAt:
+        type: string
+      value:
+        type: integer
+    type: object
+  models.SearchHistory:
+    properties:
+      createdAt:
+        type: string
+      deletedAt:
+        $ref: '#/definitions/gorm.DeletedAt'
+      id:
+        type: integer
+      query:
+        type: string
+      type:
+        type: string
+      updatedAt:
+        type: string
+      user:
+        $ref: '#/definitions/models.User'
+      userId:
+        type: integer
+    type: object
+  models.SecurityQuestion:
+    properties:
+      createdAt:
+        type: string
+      deletedAt:
+        $ref: '#/definitions/gorm.DeletedAt'
+      id:
+        type: integer
+      securityAnswer1:
+        type: string
+      securityAnswer2:
+        type: string
+      securityAnswer3:
+        type: string
+      securityAnswer4:
+        type: string
+      securityAnswer5:
+        type: string
+      totalSecurityQuestion:
+        type: integer
+      updatedAt:
+        type: string
+    type: object
+  models.User:
+    properties:
+      age:
+        type: integer
+      createdAt:
+        type: string
+      deletedAt:
+        $ref: '#/definitions/gorm.DeletedAt'
+      dob:
+        type: string
+      email:
+        type: string
+      firstName:
+        type: string
+      gender:
+        type: string
+      hasUsedPromo:
+        type: boolean
+      id:
+        type: integer
+      isActivated:
+        type: boolean
+      isBanned:
+        type: boolean
+      isSubscribeToNewsLetter:
+        type: boolean
+      lastName:
+        type: string
+      password:
+        type: string
+      profilePicturePath:
+        type: string
+      role:
+        type: string
+      securityAnswer:
+        $ref: '#/definitions/models.SecurityQuestion'
+      securityAnswerID:
+        type: integer
+      securityAnswerIndex:
+        type: integer
+      securityAnswerString:
+        type: string
+      updatedAt:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /api/hotel/search_count/{id}:
+    put:
+      description: Increment Hotel Search Count by ID
+      operationId: put-hotel
+      parameters:
+      - description: Hotel ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Hotel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+      summary: Increment Hotel Search Count by ID
+  /api/promo/{id}:
+    get:
+      description: Get all promos
+      operationId: get-promo
+      parameters:
+      - description: Promo ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Promo'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+      summary: Get all promos
+  /api/user/{id}:
+    get:
+      description: Get user by ID
+      operationId: get-user
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.User'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+      summary: Get user by ID
+  /api/user/createSearchHistory:
+    delete:
+      description: Delete Hotel by ID
+      operationId: delete-hotel
+      parameters:
+      - description: Hotel ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Hotel'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+      summary: Delete Hotel by ID
+    post:
+      description: Create Search History
+      operationId: create-search-history
+      parameters:
+      - description: Search history request object
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.SearchHistory'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SearchHistory'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+      summary: Create Search History
+swagger: "2.0"
